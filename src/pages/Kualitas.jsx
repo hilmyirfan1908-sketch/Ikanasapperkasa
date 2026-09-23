@@ -1,8 +1,10 @@
-import { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { useState, useRef } from 'react';
+import { ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function Kualitas() {
   const [openFaq, setOpenFaq] = useState(null);
+  const trackRef = useRef(null);
+  const scroll = (dir) => { if (trackRef.current) { const amount = trackRef.current.clientWidth; trackRef.current.scrollBy({ left: dir === "next" ? amount : -amount, behavior: "smooth" }); } };
   
   // Custom toggle function for FAQ that replaces the static HTML
   const toggleFaq = (i) => {
@@ -63,12 +65,12 @@ export default function Kualitas() {
       </section>
 
       <section className="bg-red-dark" style={{ padding: '64px 0' }}>
-        <div style={{ maxWidth: '1440px', margin: '0 auto', overflow: 'hidden' }}>
+        <div style={{ maxWidth: '1440px', margin: '0 auto', overflow: 'hidden', position: 'relative' }}>
           <div className="section-header container" style={{ justifyContent: 'center', textAlign: 'center', marginBottom: '48px' }}>
             <h2 className="section-title">Ribuan Pelanggan Telah Membuktikan</h2>
           </div>
           
-          <div className="testi-carousel-wrapper">
+          <div className="testi-carousel-wrapper" ref={trackRef}>
             <div className="testi-carousel">
               {[
                 {name: 'Siti Rahmawati', loc: 'Surabaya, Jawa Timur', quote: 'Ikan asapnya bener-bener enak! Wangi asapnya kerasa banget, dagingnya tebal. Packing juga aman sampai Surabaya.'},
@@ -88,32 +90,16 @@ export default function Kualitas() {
                   <div className="testi-quote">"{testi.quote}"</div>
                 </div>
               ))}
+            
             </div>
           </div>
+          <button className="pdp-arrow prev" onClick={() => scroll('prev')} aria-label="Previous testi" style={{left: '16px', top: '60%'}}>
+              <ChevronLeft />
+            </button>
+            <button className="pdp-arrow next" onClick={() => scroll('next')} aria-label="Next testi" style={{right: '16px', top: '60%'}}>
+              <ChevronRight />
+            </button>
         </div>
       </section>
 
-      <section className="faq-section" id="faq">
-        <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '48px' }}>Pertanyaan yang Sering Diajukan (FAQ)</h2>
-        
-        {[
-          { q: 'Bagaimana cara memesan produk Ikan Asap Perkasa?', a: 'Sangat mudah! Anda hanya perlu menekan tombol "Pesan Sekarang" yang ada di setiap halaman produk. Anda akan otomatis diarahkan ke WhatsApp admin kami untuk proses pencatatan pesanan, penghitungan ongkir, dan pembayaran.' },
-          { q: 'Berapa lama ikan asap bisa bertahan?', a: 'Dengan teknologi kemasan vakum kami, ikan asap bisa bertahan hingga 7 hari di suhu ruang (sangat aman untuk durasi pengiriman antar pulau). Jika sudah tiba, silakan simpan di dalam kulkas (bertahan 2 minggu) atau freezer (awet hingga 1 bulan lebih tanpa merubah rasa).' },
-          { q: 'Apakah produk Ikan Asap Perkasa sudah halal?', a: 'Tentu saja. Kami menjamin 100% kehalalan produk kami, baik dari jenis bahan baku, metode penyembelihan (untuk bahan baku tertentu), kebersihan fasilitas, hingga proses pengemasan akhir.' },
-          { q: 'Apakah melayani pengiriman ke luar pulau Jawa?', a: 'Ya, kami melayani pengiriman ke seluruh wilayah di Indonesia! Kami bekerja sama dengan jasa ekspedisi terpercaya dan menggunakan pengemasan vakum berlapis sehingga produk tetap segar setibanya di rumah Anda.' },
-          { q: 'Apakah ada harga khusus untuk grosir atau reseller?', a: 'Kami sangat menyambut kemitraan! Jika Anda ingin menjadi reseller, dropshipper, atau membeli dalam partai besar untuk acara hajatan, silakan hubungi kami via WhatsApp untuk mendapatkan potongan harga spesial.' },
-          { q: 'Ikan jenis apa yang paling tidak amis?', a: 'Metode pengasapan kami secara alami menghilangkan sebagian besar bau amis pada semua jenis ikan. Namun, jika Anda sangat sensitif terhadap bau ikan, kami sangat merekomendasikan Ikan Pari (Pe) Asap atau Ikan Manyung, karena karakteristik dagingnya yang lebih menyerupai daging ayam setelah diasap.' }
-        ].map((faq, i) => (
-          <div className={`faq-item ${openFaq === i ? 'active' : ''}`} key={i}>
-            <button className="faq-question" onClick={() => toggleFaq(i)}>
-              {faq.q} <ChevronDown className="faq-icon" size={20} />
-            </button>
-            <div className="faq-answer" style={{ maxHeight: openFaq === i ? '200px' : '0' }}>
-              <div className="faq-answer-inner">{faq.a}</div>
-            </div>
-          </div>
-        ))}
-      </section>
-    </>
-  );
-}
+      <section className="faq-section"

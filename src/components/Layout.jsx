@@ -15,11 +15,11 @@ export default function Layout({ children }) {
   return (
     <>
       <header className="header">
-        <Link to="/" className="logo">
+        <Link to="/" className="brand">
           <img src="/assets/images/logo.png" alt="Ikan Asap Perkasa Logo" className="logo-img" />
         </Link>
-        <button className="menu-toggle" onClick={() => setMobileMenuOpen(true)}>
-          <Menu />
+        <button className="menu-toggle" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+          {mobileMenuOpen ? <X /> : <Menu />}
         </button>
         <nav className="nav-menu">
           {navLinks.map(link => (
@@ -28,26 +28,16 @@ export default function Layout({ children }) {
             </Link>
           ))}
         </nav>
-      </header>
-
+      
       {/* Mobile Menu */}
-      <div className={`mobile-menu ${mobileMenuOpen ? 'active' : ''}`}>
-        <div className="mobile-menu-header">
-          <Link to="/" className="logo">
-            <img src="/assets/images/logo.png" alt="Ikan Asap Perkasa Logo" className="logo-img" />
-          </Link>
-          <button className="menu-toggle" onClick={() => setMobileMenuOpen(false)}>
-            <X />
-          </button>
-        </div>
-        <nav className="mobile-nav-links">
+      <nav className={`mobile-menu ${mobileMenuOpen ? 'active' : ''}`}>
           {navLinks.map(link => (
             <Link key={link.path} to={link.path} onClick={() => setMobileMenuOpen(false)} className={location.pathname === link.path ? 'active' : ''}>
               {link.name}
             </Link>
           ))}
         </nav>
-      </div>
+      </header>
 
       <main>{children}</main>
 
