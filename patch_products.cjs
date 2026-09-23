@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import { MessageCircle } from "lucide-react";
-// import { Link } from 'react-router-dom';
+const fs = require('fs');
+
+const productsJSX = `import { Link } from 'react-router-dom';
 import { products } from '../data/products';
 import ProductCard from '../components/ProductCard';
 
@@ -45,10 +45,13 @@ export default function Products() {
           <h2 className="section-title" style={{ marginBottom: '16px', color: 'var(--gold)' }}>Mau Lauk yang Beda?</h2>
           <p style={{ color: 'rgba(255,255,255,0.9)', marginBottom: '32px', fontSize: '16px' }}>Chat lewat whatsapp kami untuk melakukan pesanan custom di luar katalog produk.</p>
           <a href="https://wa.me/628111908119?text=Halo%20Admin,%20saya%20ingin%20melakukan%20pesanan%20custom" className="btn btn-primary" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', justifyContent: 'center', minWidth: '200px' }}>
-            <MessageCircle size={20} style={{marginRight: "8px"}} /> Chat Sekarang
+            Chat Sekarang
           </a>
         </div>
       </section>
     </>
   );
 }
+`;
+
+fs.writeFileSync('src/pages/Products.jsx', productsJSX);
