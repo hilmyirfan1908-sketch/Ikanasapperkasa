@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
-import Products from './pages/Products';
 import Kualitas from './pages/Kualitas';
 import ProductDetail from './pages/ProductDetail';
 
@@ -11,7 +10,6 @@ export default function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products />} />
           <Route path="/kualitas" element={<Kualitas />} />
           <Route path="/product/:id" element={<ProductDetail />} />
         </Routes>

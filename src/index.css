@@ -69,7 +69,7 @@ img { max-width: 100%; display: block; }
 /* Header & Nav */
 .header {
   position: sticky; top: 0; z-index: 50; background-color: var(--red);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding: 16px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding: 13px 24px;
   display: flex; align-items: center; justify-content: space-between;
 }
 .brand { display: flex; align-items: center; gap: 12px; }
@@ -88,7 +88,7 @@ img { max-width: 100%; display: block; }
 }
 .mobile-menu.active { display: flex; flex-direction: column; gap: 16px; }
 @media (min-width: 1024px) {
-  .header { padding: 16px 64px; }
+  .header { padding: 13px 64px; }
   .nav-menu { display: flex; }
   .menu-toggle { display: none; }
   .mobile-menu.active { display: none; }
@@ -103,11 +103,11 @@ img { max-width: 100%; display: block; }
 .hero-slide img { width: 100%; height: 100%; object-fit: cover; }
 .hero-overlay {
   position: absolute; inset: 0; background: linear-gradient(to top, rgba(139, 26, 43, 1) 0%, transparent 70%);
-  display: flex; flex-direction: column; justify-content: flex-end; padding: 40px 24px;
+  display: flex; flex-direction: column; justify-content: flex-end; padding: 32px 24px;
 }
-.hero-content-inner { max-width: 960px; margin: 0 auto; width: 100%; padding-bottom: 5px; text-align: left; }
+.hero-content-inner { max-width: 960px; margin: 0 auto; width: 100%; padding-bottom: 4px; text-align: left; }
 .hero-title { font-size: 32px; font-weight: 800; line-height: 1.2; margin-bottom: 16px; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
-.hero-desc { font-size: 16px; color: rgba(255,255,255,0.9); margin-bottom: 24px; }
+.hero-desc { font-size: 16px; color: rgba(255,255,255,0.9); padding: 18px 0; margin: 0; }
 @media (min-width: 768px) { .hero-title { font-size: 52px; } }
 
 /* Fixed CTA on Hero */
@@ -454,7 +454,7 @@ img { max-width: 100%; display: block; }
 .pdp-arrow.prev { left: 16px; }
 .pdp-arrow.next { right: 16px; }
 
-.logo-img { height: 48px; width: auto; }
+.logo-img { height: 38px; width: auto; }
 .footer-logo .logo-img { height: 64px; }
 
 /* Fixes for Home.jsx */
@@ -464,3 +464,6 @@ img { max-width: 100%; display: block; }
 .usp-wrapper { display: flex; flex-direction: column; gap: 32px; padding: 64px 24px; max-width: 960px; margin: 0 auto; }
 
 .text-gray { color: rgba(255, 255, 255, 0.7); }
+
+/* Hide Netlify floating badge */
+#netlify-badge, .netlify-badge, #netlify-identity-widget, .netlify-drawer { display: none !important; }

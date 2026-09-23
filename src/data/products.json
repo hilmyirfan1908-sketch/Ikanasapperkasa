@@ -71,7 +71,7 @@
       "id": "salem-sambal",
       "title": "Salem Asap Sambal - 200 gram",
       "price": "Rp 49.000",
-      "category": "spicy",
+      "category": "siap-makan",
       "portion": "2 orang",
       "description": [
         "Ada alasan kenapa Salem sering dicari oleh orang yang suka ikan dengan tekstur lembut.",
@@ -87,7 +87,7 @@
       "id": "tongkol-sambal",
       "title": "Tongkol Asap Sambal - 200 gram",
       "price": "Rp 49.000",
-      "category": "spicy",
+      "category": "siap-makan",
       "portion": "2 orang",
       "description": [
         "Kalau ngomongin ikan yang sudah akrab di dapur Indonesia, Tongkol pasti masuk daftar. Bedanya, kali ini nggak perlu repot bikin sambal sendiri.",
@@ -104,7 +104,7 @@
       "id": "manyung-sambal",
       "title": "Manyung Asap Sambal - 200 gram",
       "price": "Rp 49.000",
-      "category": "spicy",
+      "category": "siap-makan",
       "portion": "2 orang",
       "description": [
         "Buat yang suka rasa ikan yang kuat, Manyung ini pilihan yang pas.",
@@ -121,7 +121,7 @@
       "id": "ayam-sambal",
       "title": "Ayam Asap Sambal - 200 gram",
       "price": "Rp 49.000",
-      "category": "spicy",
+      "category": "siap-makan",
       "portion": "2 orang",
       "description": [
         "Kalau lagi bosan ikan tapi tetap pengin lauk asap yang gurih dan pedas, Ayam Asap Sambal ini jawabannya.",

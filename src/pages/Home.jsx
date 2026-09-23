@@ -1,29 +1,19 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ShoppingCart, Star, ShieldCheck, Flame, Utensils, ThumbsUp, Medal, Sparkles, ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
+import homeData from '../../data/home.json';
+import { products } from '../data/products';
+import ProductCard from '../components/ProductCard';
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState(null);
   const trackRef = useRef(null);
   const scroll = (dir) => { if (trackRef.current) { const amount = trackRef.current.clientWidth; trackRef.current.scrollBy({ left: dir === "next" ? amount : -amount, behavior: "smooth" }); } };
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slides = [
-    {
-      img: '/assets/images/hero_1.jpg',
-      title: 'Ikan Asap Premium Dari Pantai Utara',
-      desc: 'Nikmati kelezatan ikan asap tradisional dengan kualitas ekspor. Diproses dengan kayu bakar pilihan.'
-    },
-    {
-      img: '/assets/images/hero_2.jpg',
-      title: 'Juara Pantura: Ikan Manyung Asap',
-      desc: 'Daging tebal, empuk, dan aroma asap yang otentik. Tersedia dalam potongan siap masak.'
-    },
-    {
-      img: '/assets/images/hero_3.jpg',
-      title: '100% Halal & Tanpa Pengawet',
-      desc: 'Dikemas vakum untuk menjaga kesegaran hingga tiba di meja makan keluarga Anda.'
-    }
-  ];
+  const slides = homeData.hero.slides;
+  
+  const frozen = products.filter(p => p.category === 'frozen');
+  const siapMakan = products.filter(p => p.category === 'siap-makan');
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
   const prevSlide = () => setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
@@ -39,11 +29,11 @@ export default function Home() {
         <div className="hero-carousel" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
           {slides.map((slide, idx) => (
             <div className="hero-slide" key={idx}>
-              <img src={slide.img} alt={`Hero ${idx + 1}`} />
+              <img src={slide.image} alt={`Hero ${idx + 1}`} />
               <div className="hero-overlay">
                 <div className="hero-content-inner">
                   <h1 className="hero-title text-white">{slide.title}</h1>
-                  <p className="hero-desc">{slide.desc}</p>
+                  <p className="hero-desc">{slide.body}</p>
                 </div>
               </div>
             </div>
@@ -58,11 +48,28 @@ export default function Home() {
         </button>
 
         </section>
-      <Link to="/products" className="btn btn-primary hero-fixed-cta">
-        Lihat Produk
-      </Link>
+      <a href="https://wa.me/+628111908119" target="_blank" rel="noopener noreferrer" className="btn btn-primary hero-fixed-cta">
+        Pesan Sekarang
+      </a>
 
-      
+      <section className="container" id="products" style={{ paddingTop: '64px', paddingBottom: '64px' }}>
+        <div style={{ textAlign: 'left', marginBottom: '32px' }}>
+          <h2 className="section-title" style={{ marginBottom: '16px', color: 'var(--gold)' }}>Ikan Asap Original</h2>
+          <p style={{ color: 'white', marginBottom: '16px', textAlign: 'left', fontSize: '16px' }}>Pilihan ikan asap utuh kualitas premium yang dikemas vakum beku untuk menjaga kesegaran dan cita rasa tradisional khas Pantai Utara.</p>
+        </div>
+        <div className="product-grid">
+          {frozen.map(p => <ProductCard key={p.id} product={p} />)}
+        </div>
+
+        <div style={{ textAlign: 'left', marginBottom: '32px', marginTop: '64px' }}>
+          <h2 className="section-title" style={{ marginBottom: '16px', color: 'var(--gold)' }}>Ikan Asap Siap Makan</h2>
+          <p style={{ color: 'white', marginBottom: '16px', textAlign: 'left', fontSize: '16px' }}>Paduan sempurna ikan asap tradisional dengan racikan sambal pedas khas pesisir yang siap saji.</p>
+        </div>
+        <div className="product-grid">
+          {siapMakan.map(p => <ProductCard key={p.id} product={p} />)}
+        </div>
+      </section>
+
       <section className="container" style={{paddingTop: '48px'}}>
         <div className="section-header" style={{flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginBottom: '48px'}}>
           <h2 className="section-title">Kenapa Memilih Kami?</h2>

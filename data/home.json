@@ -1,0 +1,21 @@
+{
+  "hero": {
+    "slides": [
+      {
+        "title": "Ikan Asap Premium Dari Pantai Utara",
+        "body": "Nikmati kelezatan ikan asap tradisional dengan kualitas ekspor. Diproses dengan kayu bakar pilihan.",
+        "image": "/assets/images/hero_1.jpg"
+      },
+      {
+        "title": "Juara Pantura: Ikan Manyung Asap",
+        "body": "Daging tebal, empuk, dan aroma asap yang otentik. Tersedia dalam potongan siap masak.",
+        "image": "/assets/images/hero_2.jpg"
+      },
+      {
+        "title": "100% Halal & Tanpa Pengawet",
+        "body": "Dikemas vakum untuk menjaga kesegaran hingga tiba di meja makan keluarga Anda.",
+        "image": "/assets/images/hero_3.jpg"
+      }
+    ]
+  }
+}

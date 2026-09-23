@@ -8,7 +8,6 @@ export default function Layout({ children }) {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Products', path: '/products' },
     { name: 'Kualitas', path: '/kualitas' }
   ];
 
