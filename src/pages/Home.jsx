@@ -54,12 +54,10 @@ export default function Home() {
           <ChevronRight />
         </button>
 
-        <div className="hero-fixed-cta">
-          <Link to="/products" className="btn btn-primary" style={{width:'100%'}}>
-            Lihat Semua Produk
-          </Link>
-        </div>
-      </section>
+        </section>
+      <Link to="/products" className="btn btn-primary hero-fixed-cta">
+        Lihat Produk
+      </Link>
 
       
       <section className="container" style={{paddingTop: '48px'}}>
