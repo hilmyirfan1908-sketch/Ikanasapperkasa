@@ -1,4 +1,35 @@
-import { useState } from 'react';
+const fs = require('fs');
+const html = fs.readFileSync('.legacy_backup/kualitas.html', 'utf8');
+
+const heroStart = html.indexOf('<!-- STATIC HERO -->');
+const footerStart = html.indexOf('<!-- 65:35 FOOTER -->');
+let content = html.substring(heroStart, footerStart);
+
+// JSX transformations
+let jsx = content
+  .replace(/class=/g, 'className=')
+  .replace(/style="([^"]+)"/g, (match, styleString) => {
+    const styleObj = {};
+    styleString.split(';').forEach(rule => {
+      const parts = rule.split(':');
+      if (parts.length === 2) {
+        let key = parts[0].trim().replace(/-([a-z])/g, g => g[1].toUpperCase());
+        // Fix standard CSS properties that shouldn't be camelCased or need quoting
+        if(key === 'opacity') {
+            styleObj[key] = parseFloat(parts[1].trim());
+        } else {
+            styleObj[key] = parts[1].trim();
+        }
+      }
+    });
+    return `style={${JSON.stringify(styleObj)}}`;
+  })
+  .replace(/<img(.*?)>/g, '<img$1 />')
+  .replace(/<!--.*?-->/g, '')
+  .replace(/<i data-lucide="([^"]+)"><\/i>/g, '<ChevronDown className="faq-icon" size={20} />') // For FAQ icons
+  ;
+
+const pageCode = `import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 
 export default function Kualitas() {
@@ -104,7 +135,7 @@ export default function Kualitas() {
           { q: 'Apakah ada harga khusus untuk grosir atau reseller?', a: 'Kami sangat menyambut kemitraan! Jika Anda ingin menjadi reseller, dropshipper, atau membeli dalam partai besar untuk acara hajatan, silakan hubungi kami via WhatsApp untuk mendapatkan potongan harga spesial.' },
           { q: 'Ikan jenis apa yang paling tidak amis?', a: 'Metode pengasapan kami secara alami menghilangkan sebagian besar bau amis pada semua jenis ikan. Namun, jika Anda sangat sensitif terhadap bau ikan, kami sangat merekomendasikan Ikan Pari (Pe) Asap atau Ikan Manyung, karena karakteristik dagingnya yang lebih menyerupai daging ayam setelah diasap.' }
         ].map((faq, i) => (
-          <div className={`faq-item ${openFaq === i ? 'active' : ''}`} key={i}>
+          <div className={\`faq-item \${openFaq === i ? 'active' : ''}\`} key={i}>
             <button className="faq-question" onClick={() => toggleFaq(i)}>
               {faq.q} <ChevronDown className="faq-icon" size={20} />
             </button>
@@ -117,3 +148,5 @@ export default function Kualitas() {
     </>
   );
 }
+`;
+fs.writeFileSync('src/pages/Kualitas.jsx', pageCode);
