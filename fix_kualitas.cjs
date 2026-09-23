@@ -1,4 +1,6 @@
-import { useState, useRef } from 'react';
+const fs = require('fs');
+
+const pageCode = `import { useState, useRef } from 'react';
 import { ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function Kualitas() {
@@ -118,7 +120,7 @@ export default function Kualitas() {
           { q: 'Apakah ada harga khusus untuk grosir atau reseller?', a: 'Kami sangat menyambut kemitraan! Jika Anda ingin menjadi reseller, dropshipper, atau membeli dalam partai besar untuk acara hajatan, silakan hubungi kami via WhatsApp untuk mendapatkan potongan harga spesial.' },
           { q: 'Ikan jenis apa yang paling tidak amis?', a: 'Metode pengasapan kami secara alami menghilangkan sebagian besar bau amis pada semua jenis ikan. Namun, jika Anda sangat sensitif terhadap bau ikan, kami sangat merekomendasikan Ikan Pari (Pe) Asap atau Ikan Manyung, karena karakteristik dagingnya yang lebih menyerupai daging ayam setelah diasap.' }
         ].map((faq, i) => (
-          <div className={`faq-item ${openFaq === i ? 'active' : ''}`} key={i}>
+          <div className={\`faq-item \${openFaq === i ? 'active' : ''}\`} key={i}>
             <button className="faq-question" onClick={() => toggleFaq(i)}>
               {faq.q} <ChevronDown className="faq-icon" size={20} />
             </button>
@@ -131,3 +133,5 @@ export default function Kualitas() {
     </>
   );
 }
+`;
+fs.writeFileSync('src/pages/Kualitas.jsx', pageCode);
