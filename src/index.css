@@ -347,7 +347,7 @@ img { max-width: 100%; display: block; }
 @media (min-width: 768px) {
   .testi-carousel { padding: 0 64px; }
   /* Show ~4 cards on desktop */
-  .testi-card { min-width: calc(25% - 16px); max-width: calc(25% - 16px); scroll-snap-align: start; }
+  .testi-card { min-width: 300px; max-width: 300px; scroll-snap-align: start; }
 }
 
 /* ==========================================================================

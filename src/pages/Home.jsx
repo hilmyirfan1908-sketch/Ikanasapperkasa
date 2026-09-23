@@ -1,9 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ShoppingCart, Star, ShieldCheck, Flame, Utensils, ThumbsUp, Medal, Sparkles, ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState(null);
+  const trackRef = useRef(null);
+  const scroll = (dir) => { if (trackRef.current) { const amount = trackRef.current.clientWidth; trackRef.current.scrollBy({ left: dir === "next" ? amount : -amount, behavior: "smooth" }); } };
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
     {
@@ -100,11 +102,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container" style={{paddingTop: '48px', paddingBottom: '48px'}}>
+      <section className="container" style={{paddingTop: '48px', paddingBottom: '48px', position: 'relative'}}>
         <div className="section-header" style={{justifyContent: 'center', textAlign: 'center'}}>
           <h2 className="section-title">Apa Kata Mereka?</h2>
         </div>
-        <div className="testi-carousel-wrapper">
+        <div className="testi-carousel-wrapper" ref={trackRef}>
           <div className="testi-carousel">
             {[
               {name: 'Siti Rahmawati', loc: 'Surabaya, Jawa Timur', quote: 'Ikan asapnya bener-bener enak! Wangi asapnya kerasa banget, dagingnya tebal.'},
@@ -127,6 +129,12 @@ export default function Home() {
             ))}
           </div>
         </div>
+        <button className="pdp-arrow prev" onClick={() => scroll('prev')} aria-label="Previous testi" style={{left: '16px', top: '60%'}}>
+          <ChevronLeft />
+        </button>
+        <button className="pdp-arrow next" onClick={() => scroll('next')} aria-label="Next testi" style={{right: '16px', top: '60%'}}>
+          <ChevronRight />
+        </button>
       </section>
     
       <section className="faq-section">
