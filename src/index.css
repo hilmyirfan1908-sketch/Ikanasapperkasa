@@ -453,3 +453,6 @@ img { max-width: 100%; display: block; }
 .pdp-arrow:hover { background: rgba(0, 0, 0, 0.8); }
 .pdp-arrow.prev { left: 16px; }
 .pdp-arrow.next { right: 16px; }
+
+.logo-img { height: 48px; width: auto; }
+.footer-logo .logo-img { height: 64px; }
