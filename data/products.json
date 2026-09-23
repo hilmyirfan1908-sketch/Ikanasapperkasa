@@ -1,0 +1,60 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "product_name": "Ikan Manyung Asap Premium",
+      "product_price": "Rp 65.000",
+      "product_type": "ikan_asap",
+      "image_url": "https://images.unsplash.com/photo-1544025162-8111149c4c4f?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "2",
+      "product_name": "Ikan Pari Asap (Pe)",
+      "product_price": "Rp 45.000",
+      "product_type": "ikan_asap",
+      "image_url": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=400&q=80"
+    },
+    {
+      "id": "3",
+      "product_name": "Ikan Tongkol Asap",
+      "product_price": "Rp 35.000",
+      "product_type": "ikan_asap",
+      "image_url": "https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?auto=format&fit=crop&w=400&q=80"
+    },
+    {
+      "id": "4",
+      "product_name": "Sambal Terasi Bakar Asap",
+      "product_price": "Rp 25.000",
+      "product_type": "sambal",
+      "image_url": "https://images.unsplash.com/photo-1596632426989-12f71661cb38?auto=format&fit=crop&w=400&q=80"
+    },
+    {
+      "id": "5",
+      "product_name": "Sambal Bawang Ekstra Pedas",
+      "product_price": "Rp 20.000",
+      "product_type": "sambal",
+      "image_url": "https://images.unsplash.com/photo-1506368083636-6defb67639a7?auto=format&fit=crop&w=400&q=80"
+    },
+    {
+      "id": "6",
+      "product_name": "Ikan Bandeng Asap",
+      "product_price": "Rp 75.000",
+      "product_type": "ikan_asap",
+      "image_url": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "7",
+      "product_name": "Kepala Manyung Jumbo",
+      "product_price": "Rp 85.000",
+      "product_type": "ikan_asap",
+      "image_url": "https://images.unsplash.com/photo-1534482421-64566f976cfa?auto=format&fit=crop&w=400&q=80"
+    },
+    {
+      "id": "8",
+      "product_name": "Ikan Lele Asap Gurih",
+      "product_price": "Rp 30.000",
+      "product_type": "ikan_asap",
+      "image_url": "https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?auto=format&fit=crop&w=400&q=80"
+    }
+  ]
+}
