@@ -1,0 +1,28 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update
+
+media_folder: "public/assets/images" # Media files will be stored in the repo under public/assets/images
+public_folder: "/assets/images" # The src attribute for uploaded media will begin with /assets/images
+
+collections:
+  - name: "store_data"
+    label: "Store Data"
+    files:
+      - label: "Products"
+        name: "products"
+        file: "src/data/products.json"
+        description: "Manage your store products"
+        fields:
+          - label: "Product List"
+            name: "products_list"
+            widget: "list"
+            fields:
+              - {label: "ID (No spaces, e.g. ikan-salem)", name: "id", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Price", name: "price", widget: "string"}
+              - {label: "Category", name: "category", widget: "select", options: ["frozen", "spicy"]}
+              - {label: "Weight", name: "weight", widget: "string", required: false}
+              - {label: "Portion", name: "portion", widget: "string", required: false}
+              - {label: "Description (Paragraphs)", name: "description", widget: "list", field: {label: "Paragraph", name: "paragraph", widget: "text"}}
+              - {label: "Images", name: "images", widget: "list", field: {label: "Image", name: "image", widget: "image"}}
