@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ShoppingCart, Star, ShieldCheck, Flame, Utensils, ThumbsUp, Medal, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ShoppingCart, Star, ShieldCheck, Flame, Utensils, ThumbsUp, Medal, Sparkles, ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
 
 export default function Home() {
+  const [openFaq, setOpenFaq] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
     {
@@ -126,6 +127,30 @@ export default function Home() {
             ))}
           </div>
         </div>
+      </section>
+    
+      <section className="faq-section">
+        <div style={{textAlign: 'left', marginBottom: '32px'}}>
+          <h2 className="section-title">Pertanyaan Umum</h2>
+        </div>
+        
+        {[
+          { q: 'Bagaimana cara memesan produk Ikan Asap Perkasa?', a: 'Sangat mudah! Anda hanya perlu menekan tombol "Pesan Sekarang" yang ada di setiap halaman produk. Anda akan otomatis diarahkan ke WhatsApp admin kami untuk proses pencatatan pesanan, penghitungan ongkir, dan pembayaran.' },
+          { q: 'Berapa lama ikan asap bisa bertahan?', a: 'Dengan kemasan vakum dari kami, ikan asap bisa bertahan hingga 7 hari di suhu ruang saat pengiriman. Jika disimpan di freezer, bisa awet hingga 1 bulan lebih.' },
+          { q: 'Apakah produk Ikan Asap Perkasa sudah halal?', a: 'Tentu saja! Semua proses produksi, dari pembersihan, pengasapan, hingga pengemasan dilakukan secara higienis dan terjamin 100% Halal.' },
+          { q: 'Apakah melayani pengiriman ke luar pulau Jawa?', a: 'Ya, kami menggunakan ekspedisi yang mendukung pengiriman ke seluruh Indonesia dengan kemasan vakum aman.' },
+          { q: 'Apakah ada harga khusus untuk grosir atau reseller?', a: 'Kami sangat menyambut kemitraan! Jika Anda ingin menjadi reseller, dropshipper, atau membeli dalam partai besar, silakan hubungi kami via WhatsApp untuk mendapatkan potongan harga spesial.' },
+          { q: 'Ikan jenis apa yang paling tidak amis?', a: 'Metode pengasapan kami secara alami menghilangkan sebagian besar bau amis. Namun, jika Anda sangat sensitif, kami merekomendasikan Ikan Pari (Pe) Asap atau Ikan Manyung, karena karakteristik dagingnya yang lebih menyerupai daging ayam setelah diasap.' }
+        ].map((faq, i) => (
+          <div className={`faq-item ${openFaq === i ? 'active' : ''}`} key={i}>
+            <button className="faq-question" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
+              {faq.q} <ChevronDown className="faq-icon" size={20} />
+            </button>
+            <div className="faq-answer" style={{ maxHeight: openFaq === i ? '200px' : '0' }}>
+              <div className="faq-answer-inner">{faq.a}</div>
+            </div>
+          </div>
+        ))}
       </section>
     </>
   );

@@ -61,11 +61,13 @@ export default function Layout({ children }) {
               Buka Setiap Hari: 08.00 - 17.00 WIB
             </p>
           </div>
-          <div className="footer-right">
-            <h3 className="footer-tagline">Punya pertanyaan atau ingin pesan dalam jumlah besar?</h3>
-            <a href="https://wa.me/628111908119" className="btn btn-primary footer-btn" target="_blank" rel="noopener noreferrer">
-              Hubungi Kami (WhatsApp)
-            </a>
+          <div className="footer-right" style={{ padding: '40px 32px', textAlign: 'left', display: 'flex', flexDirection: 'column' }}>
+            <h3 className="footer-tagline" style={{ textAlign: 'left', marginBottom: '32px', fontSize: '20px' }}>Punya pertanyaan atau ingin pesan dalam jumlah besar?</h3>
+            <div style={{ textAlign: 'center', marginTop: 'auto' }}>
+              <a href="https://wa.me/628111908119" className="btn btn-primary footer-btn" target="_blank" rel="noopener noreferrer" style={{ width: 'auto', padding: '16px 40px', display: 'inline-block' }}>
+                Hubungi Kami (WhatsApp)
+              </a>
+            </div>
           </div>
         </div>
         <div className="footer-bottom">
