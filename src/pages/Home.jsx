@@ -1,20 +1,63 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ShoppingCart, Star, ShieldCheck, Flame, Utensils, ThumbsUp, Medal, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [
+    {
+      img: '/assets/images/hero_1.jpg',
+      title: 'Ikan Asap Premium Dari Pantai Utara',
+      desc: 'Nikmati kelezatan ikan asap tradisional dengan kualitas ekspor. Diproses dengan kayu bakar pilihan.'
+    },
+    {
+      img: '/assets/images/hero_2.jpg',
+      title: 'Juara Pantura: Ikan Manyung Asap',
+      desc: 'Daging tebal, empuk, dan aroma asap yang otentik. Tersedia dalam potongan siap masak.'
+    },
+    {
+      img: '/assets/images/hero_3.jpg',
+      title: '100% Halal & Tanpa Pengawet',
+      desc: 'Dikemas vakum untuk menjaga kesegaran hingga tiba di meja makan keluarga Anda.'
+    }
+  ];
+
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+
+  useEffect(() => {
+    const timer = setInterval(nextSlide, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <>
       <section className="hero-wrapper">
-        <img src="/assets/images/hero_ikan_asap.jpg" alt="Ikan Asap Hero Background" className="hero-bg" />
-        <div className="hero-overlay"></div>
-        <div className="hero-content text-center">
-          <h1 className="hero-title">Lezatnya Ikan Asap<br/>Siap Saji</h1>
-          <p className="hero-subtitle">Asli, Praktis, dan Penuh Rasa.</p>
-          <div className="hero-fixed-cta">
-            <Link to="/products" className="btn btn-primary" style={{width:'100%'}}>
-              Lihat Produk Kami
-            </Link>
-          </div>
+        <div className="hero-carousel" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+          {slides.map((slide, idx) => (
+            <div className="hero-slide" key={idx}>
+              <img src={slide.img} alt={`Hero ${idx + 1}`} />
+              <div className="hero-overlay">
+                <div className="hero-content-inner">
+                  <h1 className="hero-title text-white">{slide.title}</h1>
+                  <p className="hero-desc">{slide.desc}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <button className="hero-nav prev" onClick={prevSlide} aria-label="Previous slide">
+          <ChevronLeft />
+        </button>
+        <button className="hero-nav next" onClick={nextSlide} aria-label="Next slide">
+          <ChevronRight />
+        </button>
+
+        <div className="hero-fixed-cta">
+          <Link to="/products" className="btn btn-primary" style={{width:'100%'}}>
+            Lihat Semua Produk
+          </Link>
         </div>
       </section>
 
