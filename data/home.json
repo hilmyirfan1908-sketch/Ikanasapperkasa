@@ -17,5 +17,64 @@
         "image": "/assets/images/hero_3.jpg"
       }
     ]
+  },
+  "usp": {
+    "title": "Bedanya Ikan Asap Perkasa",
+    "subtitle": "Yang beda dan juara dari produk Saya.",
+    "items": [
+      {
+        "title": "Aromanya Wangi Asap Alami",
+        "description": "Nggak pakai bumbu asap buatan ya.  Ini beneran diasap pakai bonggol jagung pilihan dan diasap manual. Aromanya gurih-gurih wangi, bikin perut langsung keroncongan!",
+        "image": "/assets/images/usp_1.jpg",
+        "imageStyle": {
+          "objectPosition": "15% center"
+        }
+      },
+      {
+        "title": "Daging Empuk & Juicy",
+        "description": "Dagingnya tebel, pas digigit empuk banget dan nggak bikin gigi pegel. Potongan nya pas sesuai dengan porsi ditangan. Saya berani jamin, pasti nambah terus!",
+        "image": "/assets/images/usp_2.jpg"
+      },
+      {
+        "title": "Kemasan Super Higienis",
+        "description": "Saya pakaikan teknologi retort sterilization . Semua kuman mati total. Bisa tahan bertahun-tahun di suhu ruang tanpa pengawet kimia sama sekali. Aman banget! Sudah lulus uji laboratorium di kampus UGM.",
+        "image": "/assets/images/usp_3.jpg"
+      },
+      {
+        "title": "Praktis, Anti Repot",
+        "description": "Nggak perlu cape-cape nyuci ikan, bau amis nempel di tangan, atau repot bumbuin. Buka kemasan, panasin sebentar, beres!. Tau sendiri kalau lagi repot pas mau berangkat kerja atau pas lagi mager sepulang kerja. Dah lah, kalau ada yang tinggal sobek, tuang, makan ngapain cari yang repot !",
+        "image": "/assets/images/usp_4.jpg"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Apa Kata Mereka?",
+    "items": [
+      { "name": "Siti Rahmawati", "location": "Surabaya, Jawa Timur", "quote": "Ikan asapnya bener-bener enak! Wangi asapnya kerasa banget, dagingnya tebal." },
+      { "name": "Budi Santoso", "location": "Jakarta Selatan", "quote": "Langganan beli di sini buat mertua. Ikan manyungnya juara, nggak amis sama sekali." },
+      { "name": "Nisa Yulianti", "location": "Bandung, Jawa Barat", "quote": "Kemasan vakumnya bikin tahan lama. Pas nyampe Bandung masih seger banget!" },
+      { "name": "Ahmad Rifai", "location": "Semarang, Jawa Tengah", "quote": "Rasa otentik pantura banget! Harganya juga terjangkau untuk kualitas premium begini." },
+      { "name": "Dewi Lestari", "location": "Yogyakarta", "quote": "Anak-anak suka sekali sama Ikan Bandeng tanpa durinya. Sangat praktis buat sarapan keluarga." },
+      { "name": "Hendra Gunawan", "location": "Tangerang", "quote": "Sambal terasinya gila enak banget. Pas dipadu sama tongkol asap, nasi sebakul bisa habis!" },
+      { "name": "Rina Marlina", "location": "Malang, Jawa Timur", "quote": "Coba beli paket testernya dulu, eh ternyata semuanya enak. Besok order kepala manyung yang gede ah." }
+    ]
+  },
+  "faq": {
+    "title": "Pertanyaan Umum",
+    "items": [
+      { "question": "Bagaimana cara memesan produk Ikan Asap Perkasa?", "answer": "Sangat mudah! Anda hanya perlu menekan tombol \"Pesan Sekarang\" yang ada di setiap halaman produk. Anda akan otomatis diarahkan ke WhatsApp admin kami untuk proses pencatatan pesanan, penghitungan ongkir, dan pembayaran." },
+      { "question": "Berapa lama ikan asap bisa bertahan?", "answer": "Dengan kemasan vakum dari kami, ikan asap bisa bertahan hingga 7 hari di suhu ruang saat pengiriman. Jika disimpan di freezer, bisa awet hingga 1 bulan lebih." },
+      { "question": "Apakah produk Ikan Asap Perkasa sudah halal?", "answer": "Tentu saja! Semua proses produksi, dari pembersihan, pengasapan, hingga pengemasan dilakukan secara higienis dan terjamin 100% Halal." },
+      { "question": "Apakah melayani pengiriman ke luar pulau Jawa?", "answer": "Ya, kami menggunakan ekspedisi yang mendukung pengiriman ke seluruh Indonesia dengan kemasan vakum aman." },
+      { "question": "Apakah ada harga khusus untuk grosir atau reseller?", "answer": "Kami sangat menyambut kemitraan! Jika Anda ingin menjadi reseller, dropshipper, atau membeli dalam partai besar, silakan hubungi kami via WhatsApp untuk mendapatkan potongan harga spesial." },
+      { "question": "Ikan jenis apa yang paling tidak amis?", "answer": "Metode pengasapan kami secara alami menghilangkan sebagian besar bau amis. Namun, jika Anda sangat sensitif, kami merekomendasikan Ikan Pari (Pe) Asap atau Ikan Manyung, karena karakteristik dagingnya yang lebih menyerupai daging ayam setelah diasap." }
+    ]
+  },
+  "founder": {
+    "title": "Kenalan Dulu Sama Owner",
+    "image": "/assets/images/founder.jpg",
+    "body": [
+      "Kenalin, saya Furqon. Saya senang masak dan suka ikan. Dengan modal nekat dan skill masak, saya bikin ikan asap ini, resep tradisional khas demak dikemas secara steril dengan teknologi UGM. Daging empuk, bumbu nendang, higienis, tahan lama dan siap saji kapan saja."
+    ]
   }
 }

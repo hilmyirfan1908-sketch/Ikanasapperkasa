@@ -22,7 +22,7 @@ export default function ProductDetail() {
   return (
     <>
       <div className="breadcrumb">
-        <div className="container">
+        <div className="breadcrumb-container">
           <Link to="/">Home</Link> &gt; <a href="/#products">Products</a> &gt; 
           <span className="text-white font-medium" style={{marginLeft: '4px'}}>{product.title}</span>
         </div>

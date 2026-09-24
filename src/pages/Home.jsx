@@ -52,17 +52,54 @@ export default function Home() {
         Pesan Sekarang
       </a>
 
-      <section className="container" id="products" style={{ paddingTop: '64px', paddingBottom: '64px' }}>
+      <section className="container founder-section" style={{ paddingTop: '48px', paddingBottom: '24px', textAlign: 'center' }}>
+        <h2 className="section-title" style={{ marginBottom: '32px' }}>{homeData.founder.title}</h2>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', maxWidth: '800px', margin: '0 auto' }}>
+          <img 
+            src={homeData.founder.image} 
+            alt="Founder" 
+            style={{ width: '200px', height: '200px', borderRadius: '50%', objectFit: 'cover', marginBottom: '32px' }} 
+          />
+          <div style={{ color: 'white', fontSize: '16px', lineHeight: '1.8', textAlign: 'center' }}>
+            {homeData.founder.body.map((p, i) => (
+              <p key={i} style={{ marginBottom: '16px' }}>{p}</p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="container" style={{paddingTop: '24px', paddingBottom: '24px'}}>
+        <div className="section-header" style={{flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginBottom: '48px'}}>
+          <h2 className="section-title">{homeData.usp.title}</h2>
+          <p className="text-muted" style={{marginTop: '8px'}}>{homeData.usp.subtitle}</p>
+        </div>
+        
+        <div className="usp-list">
+          {homeData.usp.items.map((item, idx) => (
+            <div className="usp-box" key={idx}>
+              <div className="usp-text-side">
+                <h3 className="usp-box-title">{item.title}</h3>
+                <p className="usp-box-desc">{item.description}</p>
+              </div>
+              <div className="usp-image-side">
+                <img src={item.image} alt={item.title} style={item.imageStyle || {}} />
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="container" id="products" style={{ paddingTop: '24px', paddingBottom: '24px' }}>
         <div style={{ textAlign: 'left', marginBottom: '32px' }}>
-          <h2 className="section-title" style={{ marginBottom: '16px', color: 'var(--gold)' }}>Ikan Asap Original</h2>
+          <h3 className="section-title" style={{ marginBottom: '16px', color: 'var(--gold)' }}>Ikan Asap Original</h3>
           <p style={{ color: 'white', marginBottom: '16px', textAlign: 'left', fontSize: '16px' }}>Pilihan ikan asap utuh kualitas premium yang dikemas vakum beku untuk menjaga kesegaran dan cita rasa tradisional khas Pantai Utara.</p>
         </div>
         <div className="product-grid">
           {frozen.map(p => <ProductCard key={p.id} product={p} />)}
         </div>
 
-        <div style={{ textAlign: 'left', marginBottom: '32px', marginTop: '64px' }}>
-          <h2 className="section-title" style={{ marginBottom: '16px', color: 'var(--gold)' }}>Ikan Asap Siap Makan</h2>
+        <div style={{ textAlign: 'left', marginBottom: '32px', marginTop: '48px' }}>
+          <h3 className="section-title" style={{ marginBottom: '16px', color: 'var(--gold)' }}>Ikan Asap Siap Makan</h3>
           <p style={{ color: 'white', marginBottom: '16px', textAlign: 'left', fontSize: '16px' }}>Paduan sempurna ikan asap tradisional dengan racikan sambal pedas khas pesisir yang siap saji.</p>
         </div>
         <div className="product-grid">
@@ -70,65 +107,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container" style={{paddingTop: '48px'}}>
-        <div className="section-header" style={{flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginBottom: '48px'}}>
-          <h2 className="section-title">Kenapa Memilih Kami?</h2>
-          <p className="text-muted" style={{marginTop: '8px'}}>Kualitas premium dari Pantai Utara untuk meja makan Anda</p>
-        </div>
-        
-        <div className="usp-list">
-          <div className="usp-box">
-            <div className="usp-text-side">
-              <h3 className="usp-box-title">100% Halal</h3>
-              <p className="usp-box-desc">Seluruh proses pengolahan, mulai dari pemilihan bahan baku ikan segar, pembersihan, hingga proses pengasapan tradisional dilakukan sesuai dengan standar higienis dan syariat.</p>
-            </div>
-            <div className="usp-image-side">
-              <img src="/assets/images/usp_1.jpg" alt="100% Halal dan Higienis" style={{objectPosition: '15% center'}} />
-            </div>
-          </div>
-          
-          <div className="usp-box">
-            <div className="usp-text-side">
-              <h3 className="usp-box-title">Cocok Untuk Semua</h3>
-              <p className="usp-box-desc">Kelezatan ikan asap kami disukai oleh semua usia sebagai sumber protein terbaik untuk keluarga.</p>
-            </div>
-            <div className="usp-image-side">
-              <img src="/assets/images/usp_2.jpg" alt="Cocok Untuk Semua" />
-            </div>
-          </div>
-          
-          <div className="usp-box">
-            <div className="usp-text-side">
-              <h3 className="usp-box-title">Olahan Alami, Tanpa Pengawet</h3>
-              <p className="usp-box-desc">Ikan Asap Perkasa diolah secara alami, menggunakan kayu bakar dan tanpa tambahan pengawet.</p>
-            </div>
-            <div className="usp-image-side">
-              <img src="/assets/images/usp_3.jpg" alt="Olahan Alami, Tanpa Pengawet" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="container" style={{paddingTop: '48px', paddingBottom: '48px', position: 'relative'}}>
+      <section className="container" style={{paddingTop: '24px', paddingBottom: '24px', position: 'relative'}}>
         <div className="section-header" style={{justifyContent: 'center', textAlign: 'center'}}>
-          <h2 className="section-title">Apa Kata Mereka?</h2>
+          <h2 className="section-title">{homeData.testimonials.title}</h2>
         </div>
         <div className="testi-carousel-wrapper" ref={trackRef}>
           <div className="testi-carousel">
-            {[
-              {name: 'Siti Rahmawati', loc: 'Surabaya, Jawa Timur', quote: 'Ikan asapnya bener-bener enak! Wangi asapnya kerasa banget, dagingnya tebal.'},
-              {name: 'Budi Santoso', loc: 'Jakarta Selatan', quote: 'Langganan beli di sini buat mertua. Ikan manyungnya juara, nggak amis sama sekali.'},
-              {name: 'Nisa Yulianti', loc: 'Bandung, Jawa Barat', quote: 'Kemasan vakumnya bikin tahan lama. Pas nyampe Bandung masih seger banget!'},
-              {name: 'Ahmad Rifai', loc: 'Semarang, Jawa Tengah', quote: 'Rasa otentik pantura banget! Harganya juga terjangkau untuk kualitas premium begini.'},
-              {name: 'Dewi Lestari', loc: 'Yogyakarta', quote: 'Anak-anak suka sekali sama Ikan Bandeng tanpa durinya. Sangat praktis buat sarapan keluarga.'},
-              {name: 'Hendra Gunawan', loc: 'Tangerang', quote: 'Sambal terasinya gila enak banget. Pas dipadu sama tongkol asap, nasi sebakul bisa habis!'},
-              {name: 'Rina Marlina', loc: 'Malang, Jawa Timur', quote: 'Coba beli paket testernya dulu, eh ternyata semuanya enak. Besok order kepala manyung yang gede ah.'}
-            ].map((testi, i) => (
+            {homeData.testimonials.items.map((testi, i) => (
               <div className="testi-card" key={i}>
                 <div className="testi-header">
                   <div>
                     <div className="testi-name">{testi.name}</div>
-                    <div className="testi-loc">{testi.loc}</div>
+                    <div className="testi-loc">{testi.location}</div>
                   </div>
                 </div>
                 <div className="testi-quote">"{testi.quote}"</div>
@@ -144,25 +134,18 @@ export default function Home() {
         </button>
       </section>
     
-      <section className="faq-section">
+      <section className="faq-section" style={{ paddingTop: '24px' }}>
         <div style={{textAlign: 'left', marginBottom: '32px'}}>
-          <h2 className="section-title">Pertanyaan Umum</h2>
+          <h2 className="section-title">{homeData.faq.title}</h2>
         </div>
         
-        {[
-          { q: 'Bagaimana cara memesan produk Ikan Asap Perkasa?', a: 'Sangat mudah! Anda hanya perlu menekan tombol "Pesan Sekarang" yang ada di setiap halaman produk. Anda akan otomatis diarahkan ke WhatsApp admin kami untuk proses pencatatan pesanan, penghitungan ongkir, dan pembayaran.' },
-          { q: 'Berapa lama ikan asap bisa bertahan?', a: 'Dengan kemasan vakum dari kami, ikan asap bisa bertahan hingga 7 hari di suhu ruang saat pengiriman. Jika disimpan di freezer, bisa awet hingga 1 bulan lebih.' },
-          { q: 'Apakah produk Ikan Asap Perkasa sudah halal?', a: 'Tentu saja! Semua proses produksi, dari pembersihan, pengasapan, hingga pengemasan dilakukan secara higienis dan terjamin 100% Halal.' },
-          { q: 'Apakah melayani pengiriman ke luar pulau Jawa?', a: 'Ya, kami menggunakan ekspedisi yang mendukung pengiriman ke seluruh Indonesia dengan kemasan vakum aman.' },
-          { q: 'Apakah ada harga khusus untuk grosir atau reseller?', a: 'Kami sangat menyambut kemitraan! Jika Anda ingin menjadi reseller, dropshipper, atau membeli dalam partai besar, silakan hubungi kami via WhatsApp untuk mendapatkan potongan harga spesial.' },
-          { q: 'Ikan jenis apa yang paling tidak amis?', a: 'Metode pengasapan kami secara alami menghilangkan sebagian besar bau amis. Namun, jika Anda sangat sensitif, kami merekomendasikan Ikan Pari (Pe) Asap atau Ikan Manyung, karena karakteristik dagingnya yang lebih menyerupai daging ayam setelah diasap.' }
-        ].map((faq, i) => (
+        {homeData.faq.items.map((faq, i) => (
           <div className={`faq-item ${openFaq === i ? 'active' : ''}`} key={i}>
             <button className="faq-question" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
-              {faq.q} <ChevronDown className="faq-icon" size={20} />
+              {faq.question} <ChevronDown className="faq-icon" size={20} />
             </button>
             <div className="faq-answer" style={{ maxHeight: openFaq === i ? '200px' : '0' }}>
-              <div className="faq-answer-inner">{faq.a}</div>
+              <div className="faq-answer-inner">{faq.answer}</div>
             </div>
           </div>
         ))}
