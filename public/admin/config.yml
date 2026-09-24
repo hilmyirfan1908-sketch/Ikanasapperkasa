@@ -21,8 +21,77 @@ collections:
               - {label: "ID (No spaces, e.g. ikan-salem)", name: "id", widget: "string"}
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Price", name: "price", widget: "string"}
-              - {label: "Category", name: "category", widget: "select", options: ["frozen", "spicy"]}
+              - {label: "Category", name: "category", widget: "select", options: ["frozen", "siap-makan"]}
               - {label: "Weight", name: "weight", widget: "string", required: false}
               - {label: "Portion", name: "portion", widget: "string", required: false}
               - {label: "Description (Paragraphs)", name: "description", widget: "list", field: {label: "Paragraph", name: "paragraph", widget: "text"}}
               - {label: "Images", name: "images", widget: "list", field: {label: "Image", name: "image", widget: "image"}}
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Landing Page"
+        name: "landing_page"
+        file: "data/home.json"
+        description: "Manage the landing page content"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - label: "Slides"
+                name: "slides"
+                widget: "list"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Body", name: "body", widget: "text"}
+                  - {label: "Image", name: "image", widget: "image"}
+          - label: "Founder Section"
+            name: "founder"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Body Paragraphs", name: "body", widget: "list", field: {label: "Paragraph", name: "paragraph", widget: "text"}}
+          - label: "USP Section"
+            name: "usp"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Subtitle", name: "subtitle", widget: "string"}
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+                  - {label: "Image", name: "image", widget: "image", required: false}
+                  - label: "Image Style"
+                    name: "imageStyle"
+                    widget: "object"
+                    required: false
+                    fields:
+                      - {label: "Object Position (e.g. 15% center)", name: "objectPosition", widget: "string", required: false}
+          - label: "Testimonials Section"
+            name: "testimonials"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Name", name: "name", widget: "string"}
+                  - {label: "Location", name: "location", widget: "string"}
+                  - {label: "Quote", name: "quote", widget: "text"}
+          - label: "FAQ Section"
+            name: "faq"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Question", name: "question", widget: "string"}
+                  - {label: "Answer", name: "answer", widget: "text"}
