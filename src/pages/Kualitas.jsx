@@ -22,7 +22,7 @@ export default function Kualitas() {
         <div className="hero-slide">
           <img src="/assets/images/kualitas_hero.jpg" alt="Kualitas" className="hero-bg" />
           <div className="hero-overlay">
-            <div className="hero-content-inner" style={{ textAlign: 'left' }}>
+            <div className="hero-content-inner">
               <h1 className="hero-title text-white">Kualitas</h1>
               <p className="hero-desc">Komitmen kami menyajikan olahan laut terbaik yang aman, lezat, dan menyehatkan untuk keluarga Anda.</p>
             </div>
@@ -30,20 +30,17 @@ export default function Kualitas() {
         </div>
       </section>
 
-      <section className="deep-usp-section bg-red" style={{ paddingTop: '48px' }}>
-        <div className="section-header" style={{ maxWidth: '960px', margin: '0 auto', alignItems: 'flex-start', justifyContent: 'flex-start', textAlign: 'left', marginBottom: '32px', display: 'flex', flexDirection: 'column' }}>
+      <section className="container" style={{ paddingTop: '24px', paddingBottom: '24px' }}>
+        <div className="section-header" style={{ flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginBottom: '48px' }}>
           <h2 className="section-title">Rasa Istimewa, Kualitas Terjaga</h2>
-          <p className="text-white" style={{ marginTop: '8px', maxWidth: '960px', textAlign: 'left', opacity: 0.8 }}>Kami pastikan setiap proses terjaga dan higienis, supaya kamu bisa menikmati produk yang lezat di setiap gigitan.</p>
+          <p className="text-muted" style={{ marginTop: '8px' }}>Kami pastikan setiap proses terjaga dan higienis, supaya kamu bisa menikmati produk yang lezat di setiap gigitan.</p>
         </div>
 
-        <div className="usp-list" style={{ maxWidth: '960px', margin: '0 auto', width: '100%', padding: '0 24px' }}>
+        <div className="usp-list">
           <div className="usp-box">
             <div className="usp-text-side">
               <h3 className="usp-box-title">100% Halal</h3>
               <p className="usp-box-desc">Seluruh proses pengolahan, mulai dari pemilihan bahan baku ikan segar, pembersihan, hingga proses pengasapan tradisional dilakukan sesuai dengan standar higienis dan syariat.</p>
-            </div>
-            <div className="usp-image-side">
-              <img src="/assets/images/usp_1.jpg" alt="100% Halal dan Higienis" style={{ objectPosition: '15% center' }} />
             </div>
           </div>
           
@@ -52,9 +49,6 @@ export default function Kualitas() {
               <h3 className="usp-box-title">Cocok Untuk Semua</h3>
               <p className="usp-box-desc">Kelezatan ikan asap kami disukai oleh semua usia sebagai sumber protein terbaik untuk keluarga.</p>
             </div>
-            <div className="usp-image-side">
-              <img src="/assets/images/usp_2.jpg" alt="Cocok Untuk Semua" />
-            </div>
           </div>
           
           <div className="usp-box">
@@ -62,53 +56,57 @@ export default function Kualitas() {
               <h3 className="usp-box-title">Olahan Alami, Tanpa Pengawet</h3>
               <p className="usp-box-desc">Ikan Asap Perkasa diolah secara alami, menggunakan kayu bakar dan tanpa tambahan pengawet.</p>
             </div>
-            <div className="usp-image-side">
-              <img src="/assets/images/usp_3.jpg" alt="Olahan Alami, Tanpa Pengawet" />
+          </div>
+
+          <div className="usp-box">
+            <div className="usp-text-side">
+              <h3 className="usp-box-title">Praktis, Anti Repot</h3>
+              <p className="usp-box-desc">Nggak perlu cape-cape nyuci ikan, bau amis nempel di tangan, atau repot bumbuin. Buka kemasan, panasin sebentar, beres!. Tau sendiri kalau lagi repot pas mau berangkat kerja atau pas lagi mager sepulang kerja. Dah lah, kalau ada yang tinggal sobek, tuang, makan ngapain cari yang repot !</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-red-dark" style={{ padding: '64px 0' }}>
-        <div style={{ maxWidth: '1440px', margin: '0 auto', overflow: 'hidden', position: 'relative' }}>
-          <div className="section-header container" style={{ justifyContent: 'center', textAlign: 'center', marginBottom: '48px' }}>
-            <h2 className="section-title">Ribuan Pelanggan Telah Membuktikan</h2>
-          </div>
-          
-          <div className="testi-carousel-wrapper" ref={trackRef}>
-            <div className="testi-carousel">
-              {[
-                {name: 'Siti Rahmawati', loc: 'Surabaya, Jawa Timur', quote: 'Ikan asapnya bener-bener enak! Wangi asapnya kerasa banget, dagingnya tebal. Packing juga aman sampai Surabaya.'},
-                {name: 'Budi Santoso', loc: 'Jakarta Selatan', quote: 'Langganan beli di sini buat mertua. Ikan manyungnya juara, nggak amis sama sekali. Pelayanannya ramah.'},
-                {name: 'Nisa Yulianti', loc: 'Bandung, Jawa Barat', quote: 'Kemasan vakumnya bikin tahan lama. Pas nyampe Bandung masih seger, langsung dimasak rica-rica.'},
-                {name: 'Ahmad Rifai', loc: 'Semarang, Jawa Tengah', quote: 'Rasa otentik pantura banget! Harganya juga terjangkau untuk kualitas premium begini.'},
-                {name: 'Dewi Lestari', loc: 'Yogyakarta', quote: 'Anak-anak suka sekali sama Ikan Bandeng tanpa durinya. Sangat praktis buat sarapan keluarga.'},
-                {name: 'Hendra Gunawan', loc: 'Tangerang', quote: 'Sambal terasinya gila enak banget. Pas dipadu sama tongkol asap, nasi sebakul bisa habis!'}
-              ].map((testi, i) => (
-                <div className="testi-card" key={i}>
-                  <div className="testi-header">
-                    <div>
-                      <div className="testi-name">{testi.name}</div>
-                      <div className="testi-loc">{testi.loc}</div>
-                    </div>
+      <section className="container" style={{ paddingTop: '24px', paddingBottom: '24px', position: 'relative' }}>
+        <div className="section-header" style={{ justifyContent: 'center', textAlign: 'center' }}>
+          <h2 className="section-title">Ribuan Pelanggan Telah Membuktikan</h2>
+        </div>
+        
+        <div className="testi-carousel-wrapper" ref={trackRef}>
+          <div className="testi-carousel">
+            {[
+              {name: 'Siti Rahmawati', loc: 'Surabaya, Jawa Timur', quote: 'Ikan asapnya bener-bener enak! Wangi asapnya kerasa banget, dagingnya tebal. Packing juga aman sampai Surabaya.'},
+              {name: 'Budi Santoso', loc: 'Jakarta Selatan', quote: 'Langganan beli di sini buat mertua. Ikan manyungnya juara, nggak amis sama sekali. Pelayanannya ramah.'},
+              {name: 'Nisa Yulianti', loc: 'Bandung, Jawa Barat', quote: 'Kemasan vakumnya bikin tahan lama. Pas nyampe Bandung masih seger, langsung dimasak rica-rica.'},
+              {name: 'Ahmad Rifai', loc: 'Semarang, Jawa Tengah', quote: 'Rasa otentik pantura banget! Harganya juga terjangkau untuk kualitas premium begini.'},
+              {name: 'Dewi Lestari', loc: 'Yogyakarta', quote: 'Anak-anak suka sekali sama Ikan Bandeng tanpa durinya. Sangat praktis buat sarapan keluarga.'},
+              {name: 'Hendra Gunawan', loc: 'Tangerang', quote: 'Sambal terasinya gila enak banget. Pas dipadu sama tongkol asap, nasi sebakul bisa habis!'}
+            ].map((testi, i) => (
+              <div className="testi-card" key={i}>
+                <div className="testi-header">
+                  <div>
+                    <div className="testi-name">{testi.name}</div>
+                    <div className="testi-loc">{testi.loc}</div>
                   </div>
-                  <div className="testi-quote">"{testi.quote}"</div>
                 </div>
-              ))}
-            </div>
+                <div className="testi-quote">"{testi.quote}"</div>
+              </div>
+            ))}
           </div>
-          
-          <button className="pdp-arrow prev" onClick={() => scroll('prev')} aria-label="Previous testi" style={{left: '16px', top: '60%'}}>
-            <ChevronLeft />
-          </button>
-          <button className="pdp-arrow next" onClick={() => scroll('next')} aria-label="Next testi" style={{right: '16px', top: '60%'}}>
-            <ChevronRight />
-          </button>
         </div>
+        
+        <button className="pdp-arrow prev" onClick={() => scroll('prev')} aria-label="Previous testi" style={{left: '16px', top: '60%'}}>
+          <ChevronLeft />
+        </button>
+        <button className="pdp-arrow next" onClick={() => scroll('next')} aria-label="Next testi" style={{right: '16px', top: '60%'}}>
+          <ChevronRight />
+        </button>
       </section>
 
-      <section className="faq-section" id="faq">
-        <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '48px' }}>Pertanyaan yang Sering Diajukan (FAQ)</h2>
+      <section className="faq-section" id="faq" style={{ paddingTop: '24px' }}>
+        <div style={{ textAlign: 'left', marginBottom: '32px' }}>
+          <h2 className="section-title">Pertanyaan yang Sering Diajukan (FAQ)</h2>
+        </div>
         
         {[
           { q: 'Bagaimana cara memesan produk Ikan Asap Perkasa?', a: 'Sangat mudah! Anda hanya perlu menekan tombol "Pesan Sekarang" yang ada di setiap halaman produk. Anda akan otomatis diarahkan ke WhatsApp admin kami untuk proses pencatatan pesanan, penghitungan ongkir, dan pembayaran.' },

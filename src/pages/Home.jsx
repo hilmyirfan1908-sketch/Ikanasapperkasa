@@ -81,9 +81,6 @@ export default function Home() {
                 <h3 className="usp-box-title">{item.title}</h3>
                 <p className="usp-box-desc">{item.description}</p>
               </div>
-              <div className="usp-image-side">
-                <img src={item.image} alt={item.title} style={item.imageStyle || {}} />
-              </div>
             </div>
           ))}
         </div>

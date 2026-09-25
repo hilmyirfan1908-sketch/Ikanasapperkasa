@@ -32,7 +32,7 @@ export default function ProductCard({ product }) {
           rel="noopener noreferrer"
           className="btn btn-primary product-card-btn"
         >
-          <ShoppingCart size={16} /> Pesan Sekarang
+          <ShoppingCart size={16} /> Saya Mau Ini
         </a>
       </div>
     </div>
