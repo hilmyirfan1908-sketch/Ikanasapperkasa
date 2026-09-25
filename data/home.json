@@ -25,7 +25,7 @@
       {
         "title": "Aromanya Wangi Asap Alami",
         "description": "Nggak pakai bumbu asap buatan ya.  Ini beneran diasap pakai bonggol jagung pilihan dan diasap manual. Aromanya gurih-gurih wangi, bikin perut langsung keroncongan!",
-        "image": "/assets/images/usp_1.jpg",
+        "image": "",
         "imageStyle": {
           "objectPosition": "15% center"
         }
@@ -33,17 +33,17 @@
       {
         "title": "Daging Empuk & Juicy",
         "description": "Dagingnya tebel, pas digigit empuk banget dan nggak bikin gigi pegel. Potongan nya pas sesuai dengan porsi ditangan. Saya berani jamin, pasti nambah terus!",
-        "image": "/assets/images/usp_2.jpg"
+        "image": ""
       },
       {
         "title": "Kemasan Super Higienis",
         "description": "Saya pakaikan teknologi retort sterilization . Semua kuman mati total. Bisa tahan bertahun-tahun di suhu ruang tanpa pengawet kimia sama sekali. Aman banget! Sudah lulus uji laboratorium di kampus UGM.",
-        "image": "/assets/images/usp_3.jpg"
+        "image": ""
       },
       {
         "title": "Praktis, Anti Repot",
         "description": "Nggak perlu cape-cape nyuci ikan, bau amis nempel di tangan, atau repot bumbuin. Buka kemasan, panasin sebentar, beres!. Tau sendiri kalau lagi repot pas mau berangkat kerja atau pas lagi mager sepulang kerja. Dah lah, kalau ada yang tinggal sobek, tuang, makan ngapain cari yang repot !",
-        "image": "/assets/images/usp_4.jpg"
+        "image": ""
       }
     ]
   },
